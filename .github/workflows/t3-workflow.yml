@@ -1,0 +1,20 @@
+name: T3 CI Workflow
+
+on:
+  push:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Print repository files
+        run: ls -l
+
+      - name: Say hello using community action
+        uses: cowsay-org/cowsay-action@v1
+        with:
+          text: "Hello from GitHub Actions CI"
